@@ -9,3 +9,11 @@ todayDate <- function(){
   lubridate::today()
 }
 
+#' Return current time stamp
+#'
+#' @export
+#* @get /now
+nowTime <- function(){
+  lubridate::now()
+}
+
