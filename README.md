@@ -3,4 +3,4 @@
 Max Holiday
 ===========
 
-[![Travis-CI Build Status](https://travis-ci.org/.svg?branch=master)](https://travis-ci.org/)
+[![Build Status](https://travis-ci.org/dougmet/maxholiday.svg?branch=master)](https://travis-ci.org/dougmet/maxholiday)
