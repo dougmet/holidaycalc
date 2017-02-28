@@ -5,17 +5,12 @@ ENV PKG="maxholiday"
 # Copy all files in
 COPY . /${PKG}/
 
-# Temp dep management
-RUN . /etc/environment \
-  && install2.r --error \
-    --repos $MRAN \ 
-    lubridate
+# Install package and deps
+WORKDIR $PKG
 
-# Build the package (dependencies?)
-RUN chgrp -R staff /$PKG \
-  && R CMD build $PKG \
-  && pkgtar=$(ls $PKG*.tar.gz) \
-  && R CMD INSTALL $pkgtar
+# Using devtools for its dependency management
+RUN R -e "devtools::install()" \
+  && chgrp -R staff /$PKG
 
 # Plumb your app into 8000
 EXPOSE 8000
