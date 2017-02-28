@@ -8,7 +8,6 @@ COPY . /${PKG}/
 # Temp dep management
 RUN . /etc/environment \
   && install2.r --error \
-    --repos 'http://www.bioconductor.org/packages/release/bioc' \
     --repos $MRAN \ 
     lubridate
 
