@@ -44,15 +44,3 @@ longestRun <- function(startDate, endDate, daysLeave) {
   list(window = win, dates = runDates)
 }
 
-
-.cumsumroll <- function(x, k = 3) {
-  if(k<2) {
-    y <- as.numeric(x)
-  } else {
-    y <- cumsum(x)[-(1:(k-1))] - cumsum(c(0,x[-(length(x):(length(x) - k +1))]))
-    if(!is.null(names(x))) {
-      names(y) <- names(x)[-(length(x):(length(x) - k + 2))] # like a zoo::rollsum(align="left")
-    }
-  }
-  y
-}
