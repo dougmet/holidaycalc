@@ -13,18 +13,8 @@
 #' longestRun("2017-01-01", "2018-01-10", 3)
 longestRun <- function(startDate, endDate, daysLeave) {
 
-  startDate <- as.Date(startDate)
-  endDate <- as.Date(endDate)
-
-  # Extract the years
-  sy = as.numeric(format(startDate, "%Y"))
-  ey = as.numeric(format(endDate, "%Y"))
-
-  # Create all the dates in between
-  dates <- seq(startDate, endDate, by = "day")
-
   # TODO Allow other calendars
-  x <- timeDate::isBizday(timeDate::as.timeDate(dates), holidays = timeDate::holidayLONDON(sy:ey))
+  x <- isWorking(startDate, endDate)
 
   # Start with a biggish window
   win <- 2*daysLeave
@@ -39,8 +29,8 @@ longestRun <- function(startDate, endDate, daysLeave) {
     y <- .cumsumroll(x, k = win)
   }
 
-  runDates = as.Date(names(y)[y==daysLeave])
+  dates = as.Date(names(y)[y==daysLeave])
 
-  list(window = win, dates = runDates)
+  list(window = win, dates = dates)
 }
 
