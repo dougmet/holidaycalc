@@ -30,6 +30,8 @@
 # @return
 isWorking <- function(startDate, endDate, country="UK") {
 
+  # TODO Argument checking
+
   holFunction <- switch(country, UK = timeDate::holidayLONDON,
                         stop("Must be UK for now. Sorry."))
 
