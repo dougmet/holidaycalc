@@ -12,6 +12,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Max Holiday
+# Holiday Calculator
 
 [![Build Status](https://travis-ci.org/dougmet/maxholiday.svg?branch=master)](https://travis-ci.org/dougmet/maxholiday)
