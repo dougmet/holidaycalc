@@ -1,18 +1,16 @@
 FROM dougmet/plumber
 
-ENV PKG="holidaycalc"
-
 # Copy all files in
-COPY . /${PKG}/
+COPY . /pbpkg/
 
 # Install package and deps
-WORKDIR $PKG
+WORKDIR /pbpkg
 
 # Using devtools for its dependency management
 RUN R -e "devtools::install()" \
-  && chgrp -R staff /$PKG
+  && chgrp -R staff /pbpkg
 
 # Plumb your app into 8000
 EXPOSE 8000
 
-CMD ["/plumbapp.sh", "/holidaycalc/R/api.R"]
+CMD ["/plumbapp.sh", "/pbpkg/inst/api.R"]
