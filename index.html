@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Doug Ashton: Holiday Calculator R Package</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script> -->
+    <link rel="stylesheet" href="style.css"> --> 
   </head>
   <body>
     <h1>Holiday Calculator</h1>
@@ -13,15 +14,23 @@
     <p>Calculate how much holiday you can get with fixed leave, or how much leave you need for a fixed window hoilday.</p>
     <p>API served from R with Plumber using the timeDate package for holidays.</p>
 
-    <form>
+    <form id="longrun" action="">
       Start date:<br/>
-      <input type="date" value="2017-01-01"/> <br/>
+      <input type="date" name="start" value="2017-01-01"/> <br/>
       End date:<br/>
-      <input type="date" value="2018-01-10"/> <br/>
+      <input type="date" name="end" value="2018-01-10"/> <br/>
       Days Leave:<br/>
-      <input type="number" value="10"/> <br/>
+      <input type="number" name="daysleave" value="10"/> <br/>
       <input type="submit">
 
     </form>
+
+    <div id="longrunout" style="display: none">
+      <p>Max holiday window is <span id="maxw"\> days</p>
+      <p>Starting on one of:</p>
+        <ul id = lrdates>
+        </ul>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
