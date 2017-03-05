@@ -1,6 +1,6 @@
 FROM dougmet/plumber
 
-ENV PKG="maxholiday"
+ENV PKG="holidaycalc"
 
 # Copy all files in
 COPY . /${PKG}/
@@ -15,4 +15,4 @@ RUN R -e "devtools::install()" \
 # Plumb your app into 8000
 EXPOSE 8000
 
-CMD ["/plumbapp.sh", "/maxholiday/R/api.R"]
+CMD ["/plumbapp.sh", "/holidaycalc/R/api.R"]
