@@ -1,4 +1,4 @@
-FROM dougmet/plumber
+FROM dougmet/plumber:3.3.2
 
 # Copy all files in
 COPY . /pbpkg/
