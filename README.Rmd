@@ -28,4 +28,3 @@ An example of a website using the API is at: [dougashton.net/holidaycalc](http:/
 
 There's a simple GET endpoint that I use to test it's working at https://api.dougashton.net/pb/hols/now
 
-
